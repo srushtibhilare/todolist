@@ -1,0 +1,36 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
+}
+
+.login-container, .task-dashboard {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eee;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  background: #c8f7c5;
+}
+
+.task-filter button {
+  margin: 0 5px;
+  padding: 5px 10px;
+}

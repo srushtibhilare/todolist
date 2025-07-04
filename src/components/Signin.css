@@ -1,0 +1,228 @@
+.login-page {
+  background-color: var(--dark-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.login-container {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 32rem;
+  padding: 2.5rem;
+  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  animation: rotate 25s linear infinite reverse;
+}
+
+.form-header {
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  position: relative;
+  z-index: 1;
+}
+
+.form-header::after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 0.25rem;
+  background: var(--secondary-color);
+  border-radius: 0.25rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease-out;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.login-container input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+  outline: none;
+  background: rgba(51, 65, 85, 0.7);
+}
+
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.login-button:hover {
+  background: #7c3aed;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.75rem 0;
+  position: relative;
+}
+
+.social-login p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.social-login p::before,
+.social-login p::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, var(--input-border), transparent);
+  top: 50%;
+}
+
+.social-login p::before {
+  left: 0;
+}
+
+.social-login p::after {
+  right: 0;
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.google-login:hover {
+  background: #334155;
+  border-color: var(--accent-color);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.google-logo {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.signup-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.signup-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -0.125rem;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.signup-link a:hover {
+  color: var(--secondary-color);
+}
+
+.signup-link a:hover::after {
+  width: 100%;
+}
+
+.developer-console {
+  font-family: var(--code-font);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+}
+
+.developer-console::before {
+  content: '// ';
+  color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.75rem 1.5rem;
+  }
+  
+  .social-login p::before,
+  .social-login p::after {
+    width: 25%;
+  }
+}
